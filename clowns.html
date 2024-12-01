@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clowns.</title>
+    <style>
+        /* Import the Consolas font */
+        @font-face {
+            font-family: 'Consolas';
+            src: url('Consolas.ttf') format('truetype');
+        }
+
+        /* Basic reset for body and html */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Move content to the top */
+            align-items: center; /* Center content horizontally */
+            font-family: 'Consolas', monospace;
+            background-color: black;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Style for "Click to Enter" prompt */
+        .enter-prompt {
+            font-size: 60px; /* Larger font for the prompt */
+            cursor: pointer;
+            text-decoration: underline;
+            color: white;
+            font-weight: bold;
+            margin-top: 50px; /* Adjusted top margin */
+            margin-bottom: 30px; /* Space below the prompt */
+        }
+
+        /* Style for the aimbotfr button */
+        .aimbotfr-button {
+            font-family: 'Consolas', monospace;
+            font-size: 28px; /* Smaller font size */
+            padding: 16px 32px; /* Adjusted padding */
+            background-color: black;
+            color: white;
+            border: 4px solid white;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 40px; /* Move the button up */
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: none; /* Initially hidden */
+        }
+
+        /* Hover effect for the aimbotfr button */
+        .aimbotfr-button:hover {
+            background-color: white;
+            color: black;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        /* Typewriter effect for the description */
+        .typewriter-text {
+            font-size: 28px; /* Smaller font for the description */
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 6px solid white; /* Cursor thickness */
+            width: 0;
+            animation: typing 6s steps(50) 1s forwards, blink-caret 0.75s step-end infinite;
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+        }
+
+        /* Animation for typing effect */
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        /* Animation for blinking cursor */
+        @keyframes blink-caret {
+            50% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+    <!-- "Click to Enter" prompt -->
+    <div class="enter-prompt" onclick="start()">
+        Click to Enter
+    </div>
+
+    <!-- "aimbotfr" button -->
+    <button class="aimbotfr-button" onclick="window.location.href='https://doxbin.com/upload/AimbotFR0x01'">
+        aimbotfr
+    </button>
+
+    <!-- Typewriter description text -->
+    <div class="typewriter-text" id="typewriter"></div>
+
+    <script>
+        // Function to start playing the sound and show the clowns button and description
+        function start() {
+            // Play sound
+            var audio = new Audio('https://files.catbox.moe/kfhgtu.mp3');
+            audio.play();
+
+            // Hide the "Click to Enter" prompt
+            document.querySelector('.enter-prompt').style.display = 'none';
+
+            // Show the "aimbotfr" button and typewriter description
+            document.querySelector('.aimbotfr-button').style.display = 'block';
+            document.querySelector('.typewriter-text').style.display = 'block';
+
+            // Start the typewriter effect
+            typeWriter();
+        }
+
+        // JavaScript for typewriter effect
+        const typewriterText = "dirty skid, and cornball.";
+        let i = 0;
+        const typewriterElement = document.getElementById('typewriter');
+
+        function typeWriter() {
+            if (i < typewriterText.length) {
+                typewriterElement.innerHTML += typewriterText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100); // Adjust speed here (100ms per letter)
+            }
+        }
+    </script>
+</body>
+</html>

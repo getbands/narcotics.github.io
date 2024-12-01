@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>narcotics.</title>
+    <style>
+        /* Import the Consolas font */
+        @font-face {
+            font-family: 'Consolas';
+            src: url('Consolas.ttf') format('truetype');
+        }
+
+        /* Basic reset for body and html */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center;
+            align-items: center;
+            font-family: 'Consolas', monospace;
+            background-color: black;
+            color: white;
+            text-align: center;
+            overflow: hidden; /* Prevent scrolling during animation */
+        }
+
+        /* Style for big narcotics text */
+        .big-text {
+            font-size: 80px; /* Large size for "narcotics" */
+            font-weight: bold;
+            margin-bottom: 20px; /* Space below the big text */
+        }
+
+        /* Style for the "private AE and SE'ing group" text */
+        .centered-text {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 30px; /* Space below the "private AE" text */
+        }
+
+        /* For the typewriter effect text */
+        .typewriter-text {
+            font-size: 25px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid white; /* Simulate cursor */
+            width: 0; /* Start with zero width */
+            animation: typing 5s steps(40) 1s forwards, blink-caret 0.75s step-end infinite;
+        }
+
+        /* Animation for typing effect */
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        /* Animation for blinking cursor */
+        @keyframes blink-caret {
+            50% { border-color: transparent; }
+        }
+
+        /* Small member text at the bottom */
+        .member-text {
+            font-size: 18px; /* Smaller size for the members */
+            margin-top: 40px; /* Space above the member text */
+        }
+
+        /* Style for the links */
+        .member-text a {
+            text-decoration: underline; /* Underline the link */
+            color: white; /* Keep text color white */
+            font-weight: bold; /* Optional: Make the link bold */
+            cursor: pointer; /* Change cursor to indicate it's clickable */
+        }
+        
+        /* Hover effect for links */
+        .member-text a:hover {
+            color: darkred; /* Change link color to dark crimson red */
+        }
+
+        /* Style for the "our discord" text */
+        .discord-text {
+            font-size: 20px; /* Smaller font size */
+            margin-top: 20px; /* Space above */
+            cursor: pointer; /* Pointer cursor to indicate it's clickable */
+            font-weight: bold;
+            text-decoration: underline; /* Underline to make it look like a link */
+        }
+
+        /* Hover effect for discord link */
+        .discord-text:hover {
+            color: darkred; /* Change color to dark crimson red on hover */
+        }
+
+        /* Style for the "clowns" button */
+        .clowns-button {
+            font-family: 'Consolas', monospace; /* Use Consolas font */
+            font-size: 30px; /* Slightly smaller size */
+            padding: 12px 24px; /* Smaller padding for a more compact button */
+            background-color: black; /* Black background */
+            color: white; /* White text */
+            border: 2px solid white; /* White border */
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            margin-top: 40px; /* Space above the button */
+            font-weight: bold;
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        /* Hover effect for the "clowns" button */
+        .clowns-button:hover {
+            background-color: white; /* Change background to white */
+            color: black; /* Change text to black */
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Big narcotics text -->
+    <div class="big-text">narcotics</div>
+
+    <!-- The private AE and SE'ing group text -->
+    <div class="centered-text">private CSINT group.</div>
+
+    <!-- The typewriter text -->
+    <div class="typewriter-text" id="typewriter"></div>
+
+    <!-- Small member text with links -->
+    <div class="member-text">
+        members:<br>
+        <a href="https://discord.dog/1311033792172920904" target="_blank">colt</a><br>
+        <a href="https://discord.dog/297505155497197569" target="_blank">tauntd</a>
+    </div>
+
+    <!-- "Our Discord" text, centered below everything else -->
+    <div class="discord-text" onclick="window.location.href='https://discord.gg/xGyDAxs39U'">
+        our discord
+    </div>
+
+    <!-- Large "clowns" button centered under everything -->
+    <a href="https://narcotics.fun/clowns">
+        <button class="clowns-button">
+            clowns
+        </button>
+    </a>
+
+    <script>
+        // JavaScript for typing effect
+        const typewriterText = "@cryptofelons on discord to join";
+        let i = 0;
+        const typewriterElement = document.getElementById('typewriter');
+
+        function typeWriter() {
+            if (i < typewriterText.length) {
+                typewriterElement.innerHTML += typewriterText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100); // Adjust speed here (100ms per letter)
+            }
+        }
+
+        // Start typing after the page loads
+        window.onload = function() {
+            typeWriter();
+        };
+    </script>
+</body>
+</html>

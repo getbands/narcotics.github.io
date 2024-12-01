@@ -1,0 +1,14 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Set index.html as the homepage
+DirectoryIndex index.html
+
+# Remove .html extension from URL and redirect clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*?)/?$ $1.html [L]
+
+# Optional: Redirect requests for .html URLs to clean URLs
+RewriteCond %{REQUEST_FILENAME} \.html$
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
